@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5016DAA621B5EC3A00FDD524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503F791A21B5E753005EDCC7 /* LaunchScreen.storyboard */; };
 		503F791221B5E751005EDCC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F791121B5E751005EDCC7 /* AppDelegate.swift */; };
 		503F791421B5E751005EDCC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F791321B5E751005EDCC7 /* ViewController.swift */; };
 		503F791721B5E751005EDCC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503F791521B5E751005EDCC7 /* Main.storyboard */; };
 		503F791921B5E753005EDCC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503F791821B5E753005EDCC7 /* Assets.xcassets */; };
-		503F791C21B5E753005EDCC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503F791A21B5E753005EDCC7 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,7 +122,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				503F791C21B5E753005EDCC7 /* LaunchScreen.storyboard in Resources */,
+				5016DAA621B5EC3A00FDD524 /* LaunchScreen.storyboard in Resources */,
 				503F791921B5E753005EDCC7 /* Assets.xcassets in Resources */,
 				503F791721B5E751005EDCC7 /* Main.storyboard in Resources */,
 			);
@@ -291,7 +291,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.albertdanielricardo.ComprasUSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +308,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.albertdanielricardo.ComprasUSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
