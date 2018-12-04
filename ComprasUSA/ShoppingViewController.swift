@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ShoppingViewController: UIViewController {
 
     
     override func viewDidLoad() {

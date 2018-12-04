@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		5016DAA621B5EC3A00FDD524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503F791A21B5E753005EDCC7 /* LaunchScreen.storyboard */; };
 		503F791221B5E751005EDCC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F791121B5E751005EDCC7 /* AppDelegate.swift */; };
-		503F791421B5E751005EDCC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F791321B5E751005EDCC7 /* ViewController.swift */; };
+		503F791421B5E751005EDCC7 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F791321B5E751005EDCC7 /* ShoppingViewController.swift */; };
 		503F791721B5E751005EDCC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503F791521B5E751005EDCC7 /* Main.storyboard */; };
 		503F791921B5E753005EDCC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 503F791821B5E753005EDCC7 /* Assets.xcassets */; };
+		50882FF721B603DD001CFB69 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50882FF621B603DD001CFB69 /* SettingsViewController.swift */; };
+		50882FF921B603FE001CFB69 /* TaxesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50882FF821B603FE001CFB69 /* TaxesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		503F790E21B5E751005EDCC7 /* ComprasUSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComprasUSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		503F791121B5E751005EDCC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		503F791321B5E751005EDCC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		503F791321B5E751005EDCC7 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 		503F791621B5E751005EDCC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		503F791821B5E753005EDCC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		503F791B21B5E753005EDCC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		503F791D21B5E753005EDCC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50882FF621B603DD001CFB69 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		50882FF821B603FE001CFB69 /* TaxesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				503F791121B5E751005EDCC7 /* AppDelegate.swift */,
-				503F791321B5E751005EDCC7 /* ViewController.swift */,
+				503F791321B5E751005EDCC7 /* ShoppingViewController.swift */,
+				50882FF621B603DD001CFB69 /* SettingsViewController.swift */,
+				50882FF821B603FE001CFB69 /* TaxesViewController.swift */,
 				503F791521B5E751005EDCC7 /* Main.storyboard */,
 				503F791821B5E753005EDCC7 /* Assets.xcassets */,
 				503F791A21B5E753005EDCC7 /* LaunchScreen.storyboard */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				503F791421B5E751005EDCC7 /* ViewController.swift in Sources */,
+				50882FF921B603FE001CFB69 /* TaxesViewController.swift in Sources */,
+				503F791421B5E751005EDCC7 /* ShoppingViewController.swift in Sources */,
 				503F791221B5E751005EDCC7 /* AppDelegate.swift in Sources */,
+				50882FF721B603DD001CFB69 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
