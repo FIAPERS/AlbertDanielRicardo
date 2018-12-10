@@ -16,6 +16,13 @@
 		50882FF921B603FE001CFB69 /* TaxesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50882FF821B603FE001CFB69 /* TaxesViewController.swift */; };
 		50882FFB21B88501001CFB69 /* TaxesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50882FFA21B88501001CFB69 /* TaxesCalculator.swift */; };
 		50882FFD21B887BF001CFB69 /* UiViewController+TaxesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50882FFC21B887BF001CFB69 /* UiViewController+TaxesCalculator.swift */; };
+		EC456C4821BE8C740081691D /* ComprasUSA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC456C4621BE8C740081691D /* ComprasUSA.xcdatamodeld */; };
+		EC456C4A21BE9E080081691D /* AddEditProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC456C4921BE9E080081691D /* AddEditProductViewController.swift */; };
+		EC5DCABC21BD6BEC005A1A4C /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5DCABB21BD6BEC005A1A4C /* ProductsTableViewController.swift */; };
+		EC5DCABE21BD6EFB005A1A4C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5DCABD21BD6EFB005A1A4C /* ProductViewController.swift */; };
+		EC5DCAC121BD6FE1005A1A4C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5DCAC021BD6FE1005A1A4C /* Product.swift */; };
+		EC5DCAC321BD8B95005A1A4C /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = EC5DCAC221BD8B94005A1A4C /* products.json */; };
+		EC5DCAC721BDA08F005A1A4C /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5DCAC621BDA08F005A1A4C /* ProductsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		50882FF821B603FE001CFB69 /* TaxesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxesViewController.swift; sourceTree = "<group>"; };
 		50882FFA21B88501001CFB69 /* TaxesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxesCalculator.swift; sourceTree = "<group>"; };
 		50882FFC21B887BF001CFB69 /* UiViewController+TaxesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+TaxesCalculator.swift"; sourceTree = "<group>"; };
+		EC456C4721BE8C740081691D /* ComprasUSA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ComprasUSA.xcdatamodel; sourceTree = "<group>"; };
+		EC456C4921BE9E080081691D /* AddEditProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProductViewController.swift; sourceTree = "<group>"; };
+		EC5DCABB21BD6BEC005A1A4C /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
+		EC5DCABD21BD6EFB005A1A4C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		EC5DCAC021BD6FE1005A1A4C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		EC5DCAC221BD8B94005A1A4C /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		EC5DCAC621BDA08F005A1A4C /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +76,49 @@
 		503F791021B5E751005EDCC7 /* ComprasUSA */ = {
 			isa = PBXGroup;
 			children = (
+				EC5DCAC221BD8B94005A1A4C /* products.json */,
+				EC5DCABF21BD6FC7005A1A4C /* Model */,
+				EC5DCABA21BD6ADE005A1A4C /* Views */,
+				EC5DCAB921BD6844005A1A4C /* Controllers */,
 				503F791121B5E751005EDCC7 /* AppDelegate.swift */,
-				503F791321B5E751005EDCC7 /* ShoppingViewController.swift */,
-				50882FF621B603DD001CFB69 /* SettingsViewController.swift */,
-				50882FF821B603FE001CFB69 /* TaxesViewController.swift */,
-				503F791521B5E751005EDCC7 /* Main.storyboard */,
-				503F791821B5E753005EDCC7 /* Assets.xcassets */,
-				503F791A21B5E753005EDCC7 /* LaunchScreen.storyboard */,
-				503F791D21B5E753005EDCC7 /* Info.plist */,
 				50882FFA21B88501001CFB69 /* TaxesCalculator.swift */,
-				50882FFC21B887BF001CFB69 /* UiViewController+TaxesCalculator.swift */,
+				503F791821B5E753005EDCC7 /* Assets.xcassets */,
+				EC456C4621BE8C740081691D /* ComprasUSA.xcdatamodeld */,
+				503F791D21B5E753005EDCC7 /* Info.plist */,
 			);
 			path = ComprasUSA;
+			sourceTree = "<group>";
+		};
+		EC5DCAB921BD6844005A1A4C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC5DCABB21BD6BEC005A1A4C /* ProductsTableViewController.swift */,
+				50882FFC21B887BF001CFB69 /* UiViewController+TaxesCalculator.swift */,
+				50882FF621B603DD001CFB69 /* SettingsViewController.swift */,
+				50882FF821B603FE001CFB69 /* TaxesViewController.swift */,
+				503F791321B5E751005EDCC7 /* ShoppingViewController.swift */,
+				EC5DCABD21BD6EFB005A1A4C /* ProductViewController.swift */,
+				EC5DCAC621BDA08F005A1A4C /* ProductsTableViewCell.swift */,
+				EC456C4921BE9E080081691D /* AddEditProductViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EC5DCABA21BD6ADE005A1A4C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				503F791A21B5E753005EDCC7 /* LaunchScreen.storyboard */,
+				503F791521B5E751005EDCC7 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EC5DCABF21BD6FC7005A1A4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC5DCAC021BD6FE1005A1A4C /* Product.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5016DAA621B5EC3A00FDD524 /* LaunchScreen.storyboard in Resources */,
+				EC5DCAC321BD8B95005A1A4C /* products.json in Resources */,
 				503F791921B5E753005EDCC7 /* Assets.xcassets in Resources */,
 				503F791721B5E751005EDCC7 /* Main.storyboard in Resources */,
 			);
@@ -147,8 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC5DCABC21BD6BEC005A1A4C /* ProductsTableViewController.swift in Sources */,
+				EC456C4821BE8C740081691D /* ComprasUSA.xcdatamodeld in Sources */,
+				EC5DCAC721BDA08F005A1A4C /* ProductsTableViewCell.swift in Sources */,
 				50882FF921B603FE001CFB69 /* TaxesViewController.swift in Sources */,
+				EC5DCAC121BD6FE1005A1A4C /* Product.swift in Sources */,
 				503F791421B5E751005EDCC7 /* ShoppingViewController.swift in Sources */,
+				EC5DCABE21BD6EFB005A1A4C /* ProductViewController.swift in Sources */,
+				EC456C4A21BE9E080081691D /* AddEditProductViewController.swift in Sources */,
 				50882FFD21B887BF001CFB69 /* UiViewController+TaxesCalculator.swift in Sources */,
 				50882FFB21B88501001CFB69 /* TaxesCalculator.swift in Sources */,
 				503F791221B5E751005EDCC7 /* AppDelegate.swift in Sources */,
@@ -300,6 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ComprasUSA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +370,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ComprasUSA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -350,6 +404,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EC456C4621BE8C740081691D /* ComprasUSA.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EC456C4721BE8C740081691D /* ComprasUSA.xcdatamodel */,
+			);
+			currentVersion = EC456C4721BE8C740081691D /* ComprasUSA.xcdatamodel */;
+			path = ComprasUSA.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 503F790621B5E751005EDCC7 /* Project object */;
 }
