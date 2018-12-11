@@ -9,9 +9,10 @@
 import Foundation
 
 
-struct Products: Codable{
+/*struct Products: Codable{
     let name: String
     let state: String
     let value: String
     let creditCard: String
 }
+*/

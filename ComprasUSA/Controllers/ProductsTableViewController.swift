@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class ProductsTableViewController: UITableViewController {
     
+    var fetchedResultController: NSFetchedResultsController<Products>!
+    
     var label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 22))
-    var productsArray: [Products] = []
+    //var productsArray: [Products] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +27,25 @@ class ProductsTableViewController: UITableViewController {
     }
 
     func loadProducts(){
-        let fileURL = Bundle.main.url(forResource: "products.json",withExtension: nil)!
+        let fetchRequest: NSFetchRequest<Products> = Products.fetchRequest()
+        let sortDescritor = NSSortDescriptor(key: "productName", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescritor]
+        
+        fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultController.delegate = self
+        
+        do{
+            try fetchedResultController.performFetch()
+        }catch{
+            print(error.localizedDescription)
+        }
+        /*let fileURL = Bundle.main.url(forResource: "products.json",withExtension: nil)!
         let jsonData = try! Data(contentsOf: fileURL)
         do{
             productsArray = try JSONDecoder().decode([Products].self, from: jsonData)
         }catch{
             print(error.localizedDescription)
-        }
+        }*/
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,15 +64,18 @@ class ProductsTableViewController: UITableViewController {
     //Quantidade de linhas da tabela
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        tableView.backgroundView = productsArray.count == 0 ? label : nil
-        return productsArray.count
+        let count = fetchedResultController.fetchedObjects?.count ?? 0
+        tableView.backgroundView = count == 0 ? label : nil
+        return count
     }
 
     //Metodo que alimenta a tabela
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellProducts", for: indexPath) as! ProductsTableViewCell
 
-        let products = productsArray[indexPath.row]
+        guard let products = fetchedResultController.fetchedObjects?[indexPath.row] else{
+            return cell
+        }
         cell.prepare(with: products)
         /*cell.lblTitle?.text = "Nome \(products.name) - \(products.value)"
         cell.lblValue?.text = "Estado \(products.state)"*/
@@ -120,5 +138,20 @@ class ProductsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
+extension ProductsTableViewController: NSFetchedResultsControllerDelegate{
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .delete:
+             break
+        default:
+            tableView.reloadData()
+        }
+    }
+}
+
+
+
+
+

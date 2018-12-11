@@ -26,8 +26,14 @@ class ProductsTableViewCell: UITableViewCell {
     }
     
     func prepare(with product: Products){
-        lblTitle.text = product.name
-        lblValue.text = product.value
+        lblTitle.text = product.productName
+        lblValue.text = String(product.productValue)
+        if let image = product.productImage as? UIImage{
+            imgProduct.image = image
+        }else{
+            imgProduct.image = UIImage(named: "flag")
+        }
+        
     }
 
 }

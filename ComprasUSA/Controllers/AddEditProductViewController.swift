@@ -18,10 +18,10 @@ class AddEditProductViewController: UIViewController {
     @IBOutlet weak var btProductImage: UIButton!
     @IBOutlet weak var imgProductImage: UIImageView!
     
-    
+    var product: Products!
+            
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -31,6 +31,22 @@ class AddEditProductViewController: UIViewController {
     }
     
     @IBAction func addEditProduct(_ sender: UIButton) {
+        if product == nil{
+            product = Products(context: context)
+        }
+        product.productName = txtName.text
+        if let value = Double(txtValue.text!){
+            product.productValue = value
+        }else{
+            print("Invalid value")
+        }
+        
+        do{
+            try context.save()
+        }catch{
+            print(error.localizedDescription)
+        }
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func swtCredit(_ sender: UISwitch) {
@@ -39,6 +55,9 @@ class AddEditProductViewController: UIViewController {
     @IBAction func btAddState(_ sender: UIButton) {
     }
     
+    @IBAction func addEditImage(_ sender: UIButton) {
+        
+    }
     
     /*
     // MARK: - Navigation

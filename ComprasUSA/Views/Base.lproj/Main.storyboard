@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="IAK-aH-On0">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="IAK-aH-On0">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -30,7 +30,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="g6i-Mh-x2F">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="g6i-Mh-x2F">
                             <rect key="frame" x="0.0" y="248" width="375" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -334,7 +334,7 @@
                                 <rect key="frame" x="0.0" y="279" width="375" height="339"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellState" textLabel="Nyy-KV-iKR" detailTextLabel="nCC-Dg-kfP" style="IBUITableViewCellStyleValue1" id="X1d-vI-0gQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellState" textLabel="Nyy-KV-iKR" detailTextLabel="nCC-Dg-kfP" style="IBUITableViewCellStyleValue1" id="X1d-vI-0gQ">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X1d-vI-0gQ" id="MLJ-ka-gIf">
@@ -565,6 +565,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="TpG-Fx-A54" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gqL-4l-7kY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -595,7 +596,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usa" translatesAutoresizingMaskIntoConstraints="NO" id="YKd-uA-LWA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="usa" translatesAutoresizingMaskIntoConstraints="NO" id="YKd-uA-LWA">
                                 <rect key="frame" x="16" y="127" width="343" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="xq4-ec-sa1"/>
@@ -643,7 +644,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbn-Wq-OID">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbn-Wq-OID">
                                 <rect key="frame" x="16" y="399" width="343" height="40"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.44154218499999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Cadastrar">
@@ -653,9 +654,12 @@
                                     <action selector="addEditProduct:" destination="iOT-R7-azQ" eventType="touchUpInside" id="xxv-3a-H5Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwV-me-EUg">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwV-me-EUg">
                                 <rect key="frame" x="15.5" y="127" width="343" height="160"/>
                                 <state key="normal" title="Toque para adicionar a imagem do produto"/>
+                                <connections>
+                                    <action selector="addEditImage:" destination="iOT-R7-azQ" eventType="touchUpInside" id="64G-y4-eb8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -677,7 +681,7 @@
                             <constraint firstItem="uvV-57-V7n" firstAttribute="top" secondItem="YKd-uA-LWA" secondAttribute="bottom" constant="22" id="fN4-0S-Cui"/>
                             <constraint firstItem="gAo-hS-Nbr" firstAttribute="trailing" secondItem="uvV-57-V7n" secondAttribute="trailing" constant="16" id="iYL-gF-1wk"/>
                             <constraint firstItem="pbn-Wq-OID" firstAttribute="leading" secondItem="gAo-hS-Nbr" secondAttribute="leading" constant="16" id="iZy-Ob-PW7"/>
-                            <constraint firstItem="PwV-me-EUg" firstAttribute="centerX" secondItem="YKd-uA-LWA" secondAttribute="centerX" id="jE0-qO-JAm"/>
+                            <constraint firstItem="PwV-me-EUg" firstAttribute="centerX" secondItem="YKd-uA-LWA" secondAttribute="centerX" priority="995" id="jE0-qO-JAm"/>
                             <constraint firstItem="uvV-57-V7n" firstAttribute="leading" secondItem="vI3-5g-92E" secondAttribute="trailing" constant="8" id="q3g-Ao-VMM"/>
                             <constraint firstItem="gAo-hS-Nbr" firstAttribute="trailing" secondItem="BQX-Kh-gZO" secondAttribute="trailing" constant="16" id="rM0-k7-Tvs"/>
                             <constraint firstItem="gAo-hS-Nbr" firstAttribute="bottom" secondItem="pbn-Wq-OID" secondAttribute="bottom" constant="179" id="rtY-EW-Ll5"/>
@@ -689,7 +693,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gAo-hS-Nbr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Adicionar novo Produto" id="ndx-v4-y21"/>
+                    <navigationItem key="navigationItem" title="Adicionar novo Produto" largeTitleDisplayMode="never" id="ndx-v4-y21"/>
                     <connections>
                         <outlet property="btAddEdit" destination="pbn-Wq-OID" id="QdG-UP-Z6L"/>
                         <outlet property="btProductImage" destination="PwV-me-EUg" id="oUH-KI-0ev"/>
