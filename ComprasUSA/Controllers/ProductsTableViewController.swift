@@ -18,12 +18,17 @@ class ProductsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadProducts()
+
         
         label.text = "Sua lista esta vazia!"
         label.textAlignment = .center
         label.textColor = .gray
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadProducts()
     }
 
     func loadProducts(){
@@ -39,13 +44,7 @@ class ProductsTableViewController: UITableViewController {
         }catch{
             print(error.localizedDescription)
         }
-        /*let fileURL = Bundle.main.url(forResource: "products.json",withExtension: nil)!
-        let jsonData = try! Data(contentsOf: fileURL)
-        do{
-            productsArray = try JSONDecoder().decode([Products].self, from: jsonData)
-        }catch{
-            print(error.localizedDescription)
-        }*/
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,15 +76,17 @@ class ProductsTableViewController: UITableViewController {
             return cell
         }
         cell.prepare(with: products)
-        /*cell.lblTitle?.text = "Nome \(products.name) - \(products.value)"
-        cell.lblValue?.text = "Estado \(products.state)"*/
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*let vc = segue.destination as! InsertProductViewController
-        let product = productsArray[tableView.indexPathForSelectedRow!.row]
-        vc.product = product*/
+        if segue.identifier! == "productSegue"{
+             let vc = segue.destination as! ProductViewController
+            if let products = fetchedResultController.fetchedObjects{
+                vc.product = products[tableView.indexPathForSelectedRow!.row]
+            }
+        }
+
     }
     
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?){
@@ -102,17 +103,20 @@ class ProductsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            guard let product = fetchedResultController.fetchedObjects?[indexPath.row] else{return}
+            context.delete(product)
+            do{
+                try context.save()
+            }catch{
+                print(error.localizedDescription)
+            }
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -144,6 +148,9 @@ extension ProductsTableViewController: NSFetchedResultsControllerDelegate{
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .delete:
+            if let indexPath = indexPath{
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
              break
         default:
             tableView.reloadData()

@@ -26,8 +26,8 @@ class ProductsTableViewCell: UITableViewCell {
     }
     
     func prepare(with product: Products){
-        lblTitle.text = product.productName
-        lblValue.text = String(product.productValue)
+        lblTitle.text = "Nome: " + product.productName!
+        lblValue.text = "Valor (U$): " + String(product.productValue)
         if let image = product.productImage as? UIImage{
             imgProduct.image = image
         }else{

@@ -16,12 +16,12 @@
 		50882FF921B603FE001CFB69 /* TaxesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50882FF821B603FE001CFB69 /* TaxesViewController.swift */; };
 		50882FFB21B88501001CFB69 /* TaxesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50882FFA21B88501001CFB69 /* TaxesCalculator.swift */; };
 		50882FFD21B887BF001CFB69 /* UiViewController+TaxesCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50882FFC21B887BF001CFB69 /* UiViewController+TaxesCalculator.swift */; };
+		EC044E6021C056DA00E907C6 /* StatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC044E5F21C056DA00E907C6 /* StatesManager.swift */; };
 		EC456C4821BE8C740081691D /* ComprasUSA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC456C4621BE8C740081691D /* ComprasUSA.xcdatamodeld */; };
 		EC456C4A21BE9E080081691D /* AddEditProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC456C4921BE9E080081691D /* AddEditProductViewController.swift */; };
 		EC5AF3D721BFF5AC0097F929 /* ViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5AF3D621BFF5AC0097F929 /* ViewController+CoreData.swift */; };
 		EC5DCABC21BD6BEC005A1A4C /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5DCABB21BD6BEC005A1A4C /* ProductsTableViewController.swift */; };
 		EC5DCABE21BD6EFB005A1A4C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5DCABD21BD6EFB005A1A4C /* ProductViewController.swift */; };
-		EC5DCAC121BD6FE1005A1A4C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5DCAC021BD6FE1005A1A4C /* Product.swift */; };
 		EC5DCAC321BD8B95005A1A4C /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = EC5DCAC221BD8B94005A1A4C /* products.json */; };
 		EC5DCAC721BDA08F005A1A4C /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5DCAC621BDA08F005A1A4C /* ProductsTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -38,12 +38,12 @@
 		50882FF821B603FE001CFB69 /* TaxesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxesViewController.swift; sourceTree = "<group>"; };
 		50882FFA21B88501001CFB69 /* TaxesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxesCalculator.swift; sourceTree = "<group>"; };
 		50882FFC21B887BF001CFB69 /* UiViewController+TaxesCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+TaxesCalculator.swift"; sourceTree = "<group>"; };
+		EC044E5F21C056DA00E907C6 /* StatesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesManager.swift; sourceTree = "<group>"; };
 		EC456C4721BE8C740081691D /* ComprasUSA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ComprasUSA.xcdatamodel; sourceTree = "<group>"; };
 		EC456C4921BE9E080081691D /* AddEditProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditProductViewController.swift; sourceTree = "<group>"; };
 		EC5AF3D621BFF5AC0097F929 /* ViewController+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CoreData.swift"; sourceTree = "<group>"; };
 		EC5DCABB21BD6BEC005A1A4C /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 		EC5DCABD21BD6EFB005A1A4C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
-		EC5DCAC021BD6FE1005A1A4C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		EC5DCAC221BD8B94005A1A4C /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 		EC5DCAC621BDA08F005A1A4C /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,10 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				EC5DCAC221BD8B94005A1A4C /* products.json */,
-				EC5DCABF21BD6FC7005A1A4C /* Model */,
 				EC5DCABA21BD6ADE005A1A4C /* Views */,
 				EC5DCAB921BD6844005A1A4C /* Controllers */,
 				503F791121B5E751005EDCC7 /* AppDelegate.swift */,
+				EC044E5F21C056DA00E907C6 /* StatesManager.swift */,
 				EC5AF3D621BFF5AC0097F929 /* ViewController+CoreData.swift */,
 				50882FFA21B88501001CFB69 /* TaxesCalculator.swift */,
 				503F791821B5E753005EDCC7 /* Assets.xcassets */,
@@ -114,14 +114,6 @@
 				503F791521B5E751005EDCC7 /* Main.storyboard */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		EC5DCABF21BD6FC7005A1A4C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				EC5DCAC021BD6FE1005A1A4C /* Product.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +192,7 @@
 				EC456C4821BE8C740081691D /* ComprasUSA.xcdatamodeld in Sources */,
 				EC5DCAC721BDA08F005A1A4C /* ProductsTableViewCell.swift in Sources */,
 				50882FF921B603FE001CFB69 /* TaxesViewController.swift in Sources */,
-				EC5DCAC121BD6FE1005A1A4C /* Product.swift in Sources */,
+				EC044E6021C056DA00E907C6 /* StatesManager.swift in Sources */,
 				503F791421B5E751005EDCC7 /* ShoppingViewController.swift in Sources */,
 				EC5DCABE21BD6EFB005A1A4C /* ProductViewController.swift in Sources */,
 				EC456C4A21BE9E080081691D /* AddEditProductViewController.swift in Sources */,

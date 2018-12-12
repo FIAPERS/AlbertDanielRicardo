@@ -15,18 +15,32 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var imgProduct: UIImageView!
     @IBOutlet weak var lblState: UILabel!
     @IBOutlet weak var lblValue: UILabel!
-    @IBOutlet weak var lblCreditCard: UILabel!
+    @IBOutlet weak var swtCreditCard: UISwitch!
     
-
+    var product: Products!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*print("Nome do produto: \(product.name)")
-        
-        txtName.text = product.name
-        txtEstado.text = product.state
-        txtValue.text = product.value*/
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        lblName.text = product.productName
+        lblState.text = product.states?.stateName
+        lblValue.text = String(product.productValue)
+        swtCreditCard.setOn(product.creditCard, animated: true)
+        
+        if let image = product.productImage as? UIImage{
+            imgProduct.image = image
+        }else{
+            imgProduct.image = UIImage(named: "flag")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let vc = segue.destination as! AddEditProductViewController
+        vc.product = product
     }
 
     override func didReceiveMemoryWarning() {
