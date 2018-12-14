@@ -14,8 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let appDefaults: [String: Any] = ["dolar_preference":3.2, "iof_preference":6.38]
+        UserDefaults.standard.register(defaults: appDefaults)
+        
         return true
     }
 
@@ -35,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Refresh"), object: nil)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -69,6 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
+    
+    
     
     // MARK: - Core Data Saving support
     
