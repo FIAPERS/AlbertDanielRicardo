@@ -10,7 +10,6 @@ import UIKit
 
 class TaxesViewController: UIViewController {
 
-   
     @IBOutlet weak var lblDollar: UILabel!
     @IBOutlet weak var lblStateTaxes: UILabel!
     @IBOutlet weak var lblIof: UILabel!
@@ -26,36 +25,22 @@ class TaxesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         calculateTaxes()
     }
     
     func calculateTaxes(){
-        
         lblStateTaxesDescription.text = "Imposto do estado (\(tc.getFormattedValue(of: tc.stateTax, withCurrency: ""))%)"
         
-        
         lblIofDescription.text = "Iof (\(tc.getFormattedValue(of: tc.iof, withCurrency: ""))%)"
-        
-        
         lblDollar.text = tc.getFormattedValue(of: tc.shoppingValue, withCurrency: "US$")
-        
-        
         lblStateTaxes.text = tc.getFormattedValue(of: tc.stateTaxValue, withCurrency: "US$")
-        
-        
         lblIof.text = tc.getFormattedValue(of: tc.iofValue, withCurrency: "US$")
-        
         let real = tc.calculate(creditCard: SWCreditCard.isOn)
-        
         lblReal.text = tc.getFormattedValue(of: real, withCurrency: "R$")
-        
-        
     }
 }

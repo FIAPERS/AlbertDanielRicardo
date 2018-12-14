@@ -17,36 +17,19 @@ class SettingsViewController: UIViewController {
     
     var stateManager = StatesManager.shared
     
-    let config = Configuration.shared
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tfDollar.text = tc.getFormattedValue(of: tc.dolar , withCurrency: "")
+        tfIof.text = tc.getFormattedValue(of: tc.iof , withCurrency: "")
         tfStateTaxes.text = tc.getFormattedValue(of: tc.stateTax , withCurrency: "")
-        
-        //utilizado para observar a notificacao de refresh para alimentar os textfields com os valores do UserDafaults
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("Refresh"), object: nil, queue: nil) { (notification) in
-            self.formatView()
-        }
         loadStates()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        formatView()
-    }
-    
     func loadStates(){
-        DispatchQueue.main.async{
-            self.stateManager.loadStates(with: self.context)
-            
-            self.tableView.reloadData()
-        }
+        stateManager.loadStates(with: context)
+        self.tableView.reloadData()
     }
     
-    func formatView() {
-        tfDollar.text = UserDefaults.standard.string(forKey: "dolar_preference")
-        tfIof.text = UserDefaults.standard.string(forKey: "iof_preference")
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -58,19 +41,6 @@ class SettingsViewController: UIViewController {
     }
     @IBAction func addState(_ sender: UIButton) {
         showAlert(with: nil)
-    }
-    
-    @IBAction func change_Dolar(_ sender: UITextField) {
-        if let dolar = Double(sender.text!) {
-                config.dolar_preference = dolar
-        }
-        
-    }
-    
-    @IBAction func change_IOF(_ sender: UITextField) {
-        if let iof = Double(sender.text!) {
-            config.iof_preference = iof
-        }
     }
     
     func showAlert(with state: States?){
@@ -138,7 +108,7 @@ extension SettingsViewController: UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             stateManager.deleteState(index: indexPath.row, context: context)
             tableView.deleteRows(at: [indexPath], with: .fade)

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,10 +24,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5we-ZV-4or" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ENl-xq-doH"/>
-                            <constraint firstItem="5we-ZV-4or" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NKT-bg-kuX"/>
-                            <constraint firstItem="5we-ZV-4or" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="dlc-HV-0df"/>
-                            <constraint firstItem="5we-ZV-4or" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vza-at-MSu"/>
+                            <constraint firstAttribute="bottom" secondItem="5we-ZV-4or" secondAttribute="bottom" id="4z6-AP-2An"/>
+                            <constraint firstItem="5we-ZV-4or" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="FB2-ZS-PQz"/>
+                            <constraint firstItem="5we-ZV-4or" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ONa-0M-sv2"/>
+                            <constraint firstItem="5we-ZV-4or" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h5x-H6-8Wn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

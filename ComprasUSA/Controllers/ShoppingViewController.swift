@@ -14,11 +14,8 @@ class ShoppingViewController: UIViewController {
     @IBOutlet weak var lblRealDescription: UILabel!
     @IBOutlet weak var lblRealValor: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-               
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

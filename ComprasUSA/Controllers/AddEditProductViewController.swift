@@ -18,7 +18,6 @@ class AddEditProductViewController: UIViewController {
     @IBOutlet weak var btProductImage: UIButton!
     @IBOutlet weak var imgProductImage: UIImageView!
     @IBOutlet weak var swtCreditCard: UISwitch!
-    
     var product: Products!
     var statesManager = StatesManager.shared
     lazy var pickerView: UIPickerView = {
@@ -48,7 +47,6 @@ class AddEditProductViewController: UIViewController {
             }
         }
         prepareStateTextField()
-        
     }
     
     func prepareStateTextField(){

@@ -14,12 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let appDefaults: [String: Any] = ["dolar_preference":3.2, "iof_preference":6.38]
-        UserDefaults.standard.register(defaults: appDefaults)
-        
         return true
     }
 
@@ -39,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Refresh"), object: nil)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -60,7 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -74,8 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
-    
-    
     
     // MARK: - Core Data Saving support
     

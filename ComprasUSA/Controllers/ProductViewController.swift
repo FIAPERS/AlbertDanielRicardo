@@ -16,7 +16,6 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var lblState: UILabel!
     @IBOutlet weak var lblValue: UILabel!
     @IBOutlet weak var swtCreditCard: UISwitch!
-    
     var product: Products!
     
     override func viewDidLoad() {
