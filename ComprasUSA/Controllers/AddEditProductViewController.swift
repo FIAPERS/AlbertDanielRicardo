@@ -97,10 +97,6 @@ class AddEditProductViewController: UIViewController{
     }
     
     @IBAction func addEditProduct(_ sender: UIButton) {
-        if product == nil{
-            product = Products(context: context)
-        }
-        
         if txtName.text == ""{
             alertController.title = "Atenção"
             alertController.message = "O campo Nome do Produto precisa ser preenchido!"
@@ -123,6 +119,10 @@ class AddEditProductViewController: UIViewController{
             self.present(alertController, animated: true, completion: nil)
             
             return
+        }
+        
+        if product == nil{
+            product = Products(context: context)
         }
         
         product.productName = txtName.text
