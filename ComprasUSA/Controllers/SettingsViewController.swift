@@ -16,20 +16,49 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var stateManager = StatesManager.shared
+    let config = Configuration.shared
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tfDollar.text = tc.getFormattedValue(of: tc.dolar , withCurrency: "")
-        tfIof.text = tc.getFormattedValue(of: tc.iof , withCurrency: "")
+        
         tfStateTaxes.text = tc.getFormattedValue(of: tc.stateTax , withCurrency: "")
+        
+        //utilizado para observar a notificacao de refresh para alimentar os textfields com os valores do UserDafaults
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("Refresh"), object: nil, queue: nil) { (notification) in
+            self.formatView()
+        }
+     
         loadStates()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        formatView()
+    }
+    
+    func formatView() {
+        tfDollar.text = UserDefaults.standard.string(forKey: "dolar_preference")
+        tfIof.text = UserDefaults.standard.string(forKey: "iof_preference")
+    }
+    
     
     func loadStates(){
         stateManager.loadStates(with: context)
         self.tableView.reloadData()
     }
     
+    @IBAction func changedDollar(_ sender: UITextField) {
+        if let dolar = Double(sender.text!) {
+            config.dolar_preference = dolar
+        }
+    }
+    
+    @IBAction func changedIOF(_ sender: UITextField) {
+        if let iof = Double(sender.text!) {
+            config.iof_preference = iof
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

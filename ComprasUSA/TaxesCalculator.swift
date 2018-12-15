@@ -42,6 +42,7 @@ class TaxesCalculator {
     }
     
     func calculate(creditCard : Bool) -> Double {
+        
         var finalValue = shoppingValue + stateTaxValue
         if creditCard{
             finalValue += iofValue
