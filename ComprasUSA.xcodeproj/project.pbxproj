@@ -24,6 +24,8 @@
 		EC5DCABE21BD6EFB005A1A4C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5DCABD21BD6EFB005A1A4C /* ProductViewController.swift */; };
 		EC5DCAC321BD8B95005A1A4C /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = EC5DCAC221BD8B94005A1A4C /* products.json */; };
 		EC5DCAC721BDA08F005A1A4C /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5DCAC621BDA08F005A1A4C /* ProductsTableViewCell.swift */; };
+		ECD2B84A21C494F9004140E6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ECD2B84921C494F8004140E6 /* Settings.bundle */; };
+		ECD2B85021C496C8004140E6 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD2B84F21C496C8004140E6 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		EC5DCABD21BD6EFB005A1A4C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		EC5DCAC221BD8B94005A1A4C /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 		EC5DCAC621BDA08F005A1A4C /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
+		ECD2B84921C494F8004140E6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		ECD2B84F21C496C8004140E6 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		503F791021B5E751005EDCC7 /* ComprasUSA */ = {
 			isa = PBXGroup;
 			children = (
+				ECD2B85121C496FB004140E6 /* Model */,
 				EC5DCAC221BD8B94005A1A4C /* products.json */,
 				EC5DCABA21BD6ADE005A1A4C /* Views */,
 				EC5DCAB921BD6844005A1A4C /* Controllers */,
@@ -87,6 +92,7 @@
 				50882FFA21B88501001CFB69 /* TaxesCalculator.swift */,
 				503F791821B5E753005EDCC7 /* Assets.xcassets */,
 				EC456C4621BE8C740081691D /* ComprasUSA.xcdatamodeld */,
+				ECD2B84921C494F8004140E6 /* Settings.bundle */,
 				503F791D21B5E753005EDCC7 /* Info.plist */,
 			);
 			path = ComprasUSA;
@@ -114,6 +120,14 @@
 				503F791521B5E751005EDCC7 /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		ECD2B85121C496FB004140E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECD2B84F21C496C8004140E6 /* Configuration.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +190,7 @@
 			files = (
 				5016DAA621B5EC3A00FDD524 /* LaunchScreen.storyboard in Resources */,
 				EC5DCAC321BD8B95005A1A4C /* products.json in Resources */,
+				ECD2B84A21C494F9004140E6 /* Settings.bundle in Resources */,
 				503F791921B5E753005EDCC7 /* Assets.xcassets in Resources */,
 				503F791721B5E751005EDCC7 /* Main.storyboard in Resources */,
 			);
@@ -190,6 +205,7 @@
 			files = (
 				EC5DCABC21BD6BEC005A1A4C /* ProductsTableViewController.swift in Sources */,
 				EC456C4821BE8C740081691D /* ComprasUSA.xcdatamodeld in Sources */,
+				ECD2B85021C496C8004140E6 /* Configuration.swift in Sources */,
 				EC5DCAC721BDA08F005A1A4C /* ProductsTableViewCell.swift in Sources */,
 				50882FF921B603FE001CFB69 /* TaxesViewController.swift in Sources */,
 				EC044E6021C056DA00E907C6 /* StatesManager.swift in Sources */,
@@ -355,7 +371,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.albertdanielricardo.ComprasUSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -373,7 +389,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.albertdanielricardo.ComprasUSA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

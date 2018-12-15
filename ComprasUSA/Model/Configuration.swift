@@ -7,8 +7,6 @@
 //
 import Foundation
 
-
-
 class Configuration {
     
     enum UserDefaultsKeys: String {
