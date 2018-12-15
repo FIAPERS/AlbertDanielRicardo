@@ -287,6 +287,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
+                                    <action selector="changedDollar:" destination="MDS-CV-wnT" eventType="editingDidEnd" id="QeV-Ke-ywP"/>
                                     <outlet property="delegate" destination="MDS-CV-wnT" id="L8h-je-EdA"/>
                                 </connections>
                             </textField>
@@ -378,6 +379,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
+                                    <action selector="changedIOF:" destination="MDS-CV-wnT" eventType="editingDidEnd" id="31s-Sn-7qX"/>
                                     <outlet property="delegate" destination="MDS-CV-wnT" id="0z9-ta-61l"/>
                                 </connections>
                             </textField>
