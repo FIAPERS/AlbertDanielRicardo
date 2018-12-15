@@ -48,16 +48,19 @@ class TaxesViewController: UIViewController {
                let  valorTaxaProduto = data.states?.stateTaxes ?? 0.0
                let  valorTaxaEstado  = valorProduto *  valorTaxaProduto / 100
                 
-                var valorTotal = valorProduto + valorTaxaEstado
+                var valorCompraDollar = valorProduto + valorTaxaEstado
                 
                 
                 if(data.creditCard){
                     
-                  valorTotal += (valorTotal) *  tc.iof / 100
+                  valorCompraDollar = valorCompraDollar + (valorCompraDollar *  tc.iof / 100)
                    
                 }
-                totalDollar = (valorTotal + totalDollar)
-                totalReal = valorTotal * tc.dolar
+                
+                totalDollar = (valorCompraDollar + totalDollar)
+               
+                
+                totalReal = totalReal + (valorCompraDollar * tc.dolar)
                 
             }
 
