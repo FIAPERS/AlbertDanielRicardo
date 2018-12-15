@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEditProductViewController: UIViewController {
+class AddEditProductViewController: UIViewController{
 
     
     @IBOutlet weak var txtName: UITextField!
@@ -18,6 +18,9 @@ class AddEditProductViewController: UIViewController {
     @IBOutlet weak var btProductImage: UIButton!
     @IBOutlet weak var imgProductImage: UIImageView!
     @IBOutlet weak var swtCreditCard: UISwitch!
+    let alertController = UIAlertController(title: "", message:
+        "", preferredStyle: UIAlertControllerStyle.alert)
+    
     var product: Products!
     var statesManager = StatesManager.shared
     lazy var pickerView: UIPickerView = {
@@ -30,6 +33,8 @@ class AddEditProductViewController: UIViewController {
             
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
         
         if product != nil{
             title = "Editar produto"
@@ -46,10 +51,12 @@ class AddEditProductViewController: UIViewController {
                 btProductImage.setTitle(nil, for: .normal)
             }
         }
-        prepareStateTextField()
+        
     }
     
     func prepareStateTextField(){
+        
+        
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
         toolbar.backgroundColor = .white
         let btCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
@@ -57,8 +64,11 @@ class AddEditProductViewController: UIViewController {
         let btFlexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         toolbar.items = [btCancel,btFlexibleSpace,btDone]
         
+        
         txtState.inputView = pickerView
         txtState.inputAccessoryView = toolbar
+        txtState.isEnabled = true
+        
     }
 
     @objc func cancel(){
@@ -72,7 +82,14 @@ class AddEditProductViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         statesManager.loadStates(with: context)
+        if statesManager.states.count > 0 {
+            prepareStateTextField()
+        } else {
+            txtState.isEnabled = false
+        }
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -83,6 +100,31 @@ class AddEditProductViewController: UIViewController {
         if product == nil{
             product = Products(context: context)
         }
+        
+        if txtName.text == ""{
+            alertController.title = "Atenção"
+            alertController.message = "O campo Nome do Produto precisa ser preenchido!"
+            self.present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        
+        if txtState.text == ""{
+            alertController.title = "Atenção"
+            alertController.message = "O campo Estado da compra precisa ser preenchido!"
+            self.present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        
+        if txtValue.text == ""{
+            alertController.title = "Atenção"
+            alertController.message = "O campo Valor precisa ser preenchido!"
+            self.present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        
         product.productName = txtName.text
         product.productImage = imgProductImage.image
         product.creditCard = swtCreditCard.isOn
