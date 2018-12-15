@@ -25,7 +25,7 @@
 		EC5DCAC321BD8B95005A1A4C /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = EC5DCAC221BD8B94005A1A4C /* products.json */; };
 		EC5DCAC721BDA08F005A1A4C /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5DCAC621BDA08F005A1A4C /* ProductsTableViewCell.swift */; };
 		ECD2B84A21C494F9004140E6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ECD2B84921C494F8004140E6 /* Settings.bundle */; };
-		ECD2B84C21C49524004140E6 /* Model in Resources */ = {isa = PBXBuildFile; fileRef = ECD2B84B21C49524004140E6 /* Model */; };
+		ECD2B85021C496C8004140E6 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD2B84F21C496C8004140E6 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,7 @@
 		EC5DCAC221BD8B94005A1A4C /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 		EC5DCAC621BDA08F005A1A4C /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		ECD2B84921C494F8004140E6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		ECD2B84B21C49524004140E6 /* Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Model; sourceTree = "<group>"; };
+		ECD2B84F21C496C8004140E6 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +82,8 @@
 		503F791021B5E751005EDCC7 /* ComprasUSA */ = {
 			isa = PBXGroup;
 			children = (
+				ECD2B85121C496FB004140E6 /* Model */,
 				EC5DCAC221BD8B94005A1A4C /* products.json */,
-				ECD2B84B21C49524004140E6 /* Model */,
 				EC5DCABA21BD6ADE005A1A4C /* Views */,
 				EC5DCAB921BD6844005A1A4C /* Controllers */,
 				503F791121B5E751005EDCC7 /* AppDelegate.swift */,
@@ -120,6 +120,14 @@
 				503F791521B5E751005EDCC7 /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		ECD2B85121C496FB004140E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECD2B84F21C496C8004140E6 /* Configuration.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +188,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECD2B84C21C49524004140E6 /* Model in Resources */,
 				5016DAA621B5EC3A00FDD524 /* LaunchScreen.storyboard in Resources */,
 				EC5DCAC321BD8B95005A1A4C /* products.json in Resources */,
 				ECD2B84A21C494F9004140E6 /* Settings.bundle in Resources */,
@@ -198,6 +205,7 @@
 			files = (
 				EC5DCABC21BD6BEC005A1A4C /* ProductsTableViewController.swift in Sources */,
 				EC456C4821BE8C740081691D /* ComprasUSA.xcdatamodeld in Sources */,
+				ECD2B85021C496C8004140E6 /* Configuration.swift in Sources */,
 				EC5DCAC721BDA08F005A1A4C /* ProductsTableViewCell.swift in Sources */,
 				50882FF921B603FE001CFB69 /* TaxesViewController.swift in Sources */,
 				EC044E6021C056DA00E907C6 /* StatesManager.swift in Sources */,
