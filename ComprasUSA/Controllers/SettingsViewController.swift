@@ -14,6 +14,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tfIof: UITextField!
     @IBOutlet weak var tfStateTaxes: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    let alertController = UIAlertController(title: "", message:
+        "", preferredStyle: UIAlertControllerStyle.alert)
     
     var stateManager = StatesManager.shared
     let config = Configuration.shared
@@ -21,7 +23,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
         tfStateTaxes.text = tc.getFormattedValue(of: tc.stateTax , withCurrency: "")
         
         //utilizado para observar a notificacao de refresh para alimentar os textfields com os valores do UserDafaults
@@ -77,18 +79,21 @@ class SettingsViewController: UIViewController {
         let alert = UIAlertController(title: title + " estado", message: nil, preferredStyle: .alert)
         alert.addTextField { (txtStateName) in
             txtStateName.placeholder = "Nome do Estado"
+            txtStateName.addTarget(alert, action: #selector(alert.textChangedInInputAlert), for: .editingChanged)
             if let name = state?.stateName{
                 txtStateName.text = name
             }
         }
         alert.addTextField { (txtStateTaxes) in
             txtStateTaxes.placeholder = "taxa do Estado"
+            txtStateTaxes.addTarget(alert, action: #selector(alert.textChangedInInputAlert), for: .editingChanged)
             if let taxes = state?.stateTaxes{
                 txtStateTaxes.text = String(taxes)
             }
         }
         
-        alert.addAction(UIAlertAction(title: title, style: .default, handler: { (action) in
+        let submitAction = (UIAlertAction(title: title, style: .default, handler: { (action) in
+            
             let state = state ?? States(context: self.context)
             state.stateName = alert.textFields?.first?.text
             var taxesField = alert.textFields?.last?.text
@@ -104,6 +109,8 @@ class SettingsViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }))
+        submitAction.isEnabled = false
+        alert.addAction(submitAction)
         alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
         
@@ -145,6 +152,25 @@ extension SettingsViewController: UITableViewDataSource{
     }
     
     
+}
+
+extension UIAlertController {
+    
+    func isValidStateName(_ name: String) -> Bool {
+        return name.count > 0 && name.rangeOfCharacter(from: .whitespacesAndNewlines) == nil
+    }
+    
+    func isValidStateTaxes(_ taxes: String) -> Bool {
+        return taxes.count > 0 && taxes.rangeOfCharacter(from: .whitespacesAndNewlines) == nil && NSPredicate(format: "self matches %@", "^[0-9]{1,9999999}([,.][0-9]{1,9999999})?$").evaluate(with: taxes)
+    }
+    
+    @objc func textChangedInInputAlert() {
+        if let name = textFields?[0].text,
+            let taxes = textFields?[1].text,
+            let action = actions.first {
+            action.isEnabled = isValidStateName(name) && isValidStateTaxes(taxes)
+        }
+    }
 }
 
 extension SettingsViewController: UITableViewDelegate{
