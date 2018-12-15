@@ -25,16 +25,16 @@ class ProductsTableViewCell: UITableViewCell {
     }
     
     func prepare(with product: Products){
-        if product != nil {
         
-            lblTitle.text = "Nome: " + product.productName!
-            lblValue.text = "Valor (U$): " + String(product.productValue)
-            if let image = product.productImage as? UIImage{
-                imgProduct.image = image
-            }else{
-                imgProduct.image = UIImage(named: "flag")
-            }
+        
+        lblTitle.text = "Nome: " + product.productName!
+        lblValue.text = "Valor (U$): " + String(product.productValue)
+        if let image = product.productImage as? UIImage{
+            imgProduct.image = image
+        }else{
+            imgProduct.image = UIImage(named: "flag")
         }
+        
         
     }
 

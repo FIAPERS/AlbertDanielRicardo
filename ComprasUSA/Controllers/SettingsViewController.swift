@@ -20,11 +20,10 @@ class SettingsViewController: UIViewController {
     var stateManager = StatesManager.shared
     let config = Configuration.shared
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
-        tfStateTaxes.text = tc.getFormattedValue(of: tc.stateTax , withCurrency: "")
         
         //utilizado para observar a notificacao de refresh para alimentar os textfields com os valores do UserDafaults
         NotificationCenter.default.addObserver(forName: NSNotification.Name("Refresh"), object: nil, queue: nil) { (notification) in
@@ -40,8 +39,12 @@ class SettingsViewController: UIViewController {
     }
     
     func formatView() {
+        
         tfDollar.text = UserDefaults.standard.string(forKey: "dolar_preference")
         tfIof.text = UserDefaults.standard.string(forKey: "iof_preference")
+        tc.dolar = tc.convertToDouble(tfDollar.text ?? "0.0")
+        tc.iof = tc.convertToDouble(tfIof.text ?? "0.0")
+        
     }
     
     
@@ -53,12 +56,14 @@ class SettingsViewController: UIViewController {
     @IBAction func changedDollar(_ sender: UITextField) {
         if let dolar = Double(sender.text!) {
             config.dolar_preference = dolar
+            tc.dolar = dolar
         }
     }
     
     @IBAction func changedIOF(_ sender: UITextField) {
         if let iof = Double(sender.text!) {
             config.iof_preference = iof
+            tc.iof = iof
         }
     }
     
@@ -68,7 +73,7 @@ class SettingsViewController: UIViewController {
     func setValues()  {
         tc.dolar = tc.convertToDouble(tfDollar.text!)
         tc.iof  = tc.convertToDouble(tfIof.text!)
-        tc.stateTax  = tc.convertToDouble(tfStateTaxes.text!)
+        
     }
     @IBAction func addState(_ sender: UIButton) {
         showAlert(with: nil)
