@@ -56,7 +56,7 @@ class TaxesViewController: UIViewController {
                   valorTotal += (valorTotal) *  tc.iof / 100
                    
                 }
-                totalDollar += valorTotal
+                totalDollar = (totalDollar + valorTotal)
                 totalReal = valorTotal * tc.dolar
                 
             }
