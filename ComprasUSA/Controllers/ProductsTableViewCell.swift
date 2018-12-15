@@ -32,7 +32,7 @@ class ProductsTableViewCell: UITableViewCell {
         if let image = product.productImage as? UIImage{
             imgProduct.image = image
         }else{
-            imgProduct.image = UIImage(named: "flag")
+            imgProduct.image = UIImage(named: "product")
         }
         
         

@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="g6i-Mh-x2F">
+                        <view key="tableFooterView" contentMode="scaleToFill" id="g6i-Mh-x2F">
                             <rect key="frame" x="0.0" y="118" width="375" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,7 +32,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brasil" translatesAutoresizingMaskIntoConstraints="NO" id="96r-L9-Xj9">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product" translatesAutoresizingMaskIntoConstraints="NO" id="96r-L9-Xj9">
                                             <rect key="frame" x="16" y="7" width="51" height="66"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="66" id="3Dm-1X-9tx"/>
@@ -100,7 +100,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usa" translatesAutoresizingMaskIntoConstraints="NO" id="caC-5c-HEZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product" translatesAutoresizingMaskIntoConstraints="NO" id="caC-5c-HEZ">
                                 <rect key="frame" x="16" y="127" width="343" height="295"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="250" constant="295" id="Dy0-WC-Mcf"/>
@@ -500,7 +500,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="250" image="usa" translatesAutoresizingMaskIntoConstraints="NO" id="YKd-uA-LWA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="250" image="product" translatesAutoresizingMaskIntoConstraints="NO" id="YKd-uA-LWA">
                                 <rect key="frame" x="16" y="127" width="343" height="199"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="250" constant="160" id="96z-yD-SPS"/>
@@ -618,13 +618,12 @@
     </scenes>
     <resources>
         <image name="bag" width="23" height="23"/>
-        <image name="brasil" width="937" height="376"/>
+        <image name="product" width="982" height="784"/>
         <image name="settings" width="23" height="23"/>
         <image name="taxes" width="23" height="23"/>
-        <image name="usa" width="700" height="295"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CZx-gb-DZ5"/>
+        <segue reference="vGY-yT-Njz"/>
         <segue reference="s28-Xc-CPC"/>
     </inferredMetricsTieBreakers>
 </document>
